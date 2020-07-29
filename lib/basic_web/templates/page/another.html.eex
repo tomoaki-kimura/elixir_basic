@@ -1,0 +1,5 @@
+<h1>This is another page</h1>
+
+<%= inspect( System.build_info() ) %>
+<hr>
+<%= inspect( @params ) %>

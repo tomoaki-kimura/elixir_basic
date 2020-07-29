@@ -1,0 +1,32 @@
+<h1>I'm form page</h1>
+
+<form method="GET" action="/abc/def">
+
+<p>
+メモ：
+<input name="memo" type="text">
+</p>
+
+<p>
+好きな言語：
+<input name="language[]" type="checkbox" value="Elixir">Elixir
+<input name="language[]" type="checkbox" value="Rust">Rust
+<input name="language[]" type="checkbox" value="Julia">Julia
+</p>
+
+<p>
+年代：
+<select name="age">
+  <option value="10">10代
+  <option value="20">20代
+  <option value="30">30代
+  <option value="30">40代
+  <option value="50">50代
+  <option value="60">60代
+  <option value="70">70代以上
+</select>
+</p>
+
+<input type="submit" value="送信">
+
+</form>
