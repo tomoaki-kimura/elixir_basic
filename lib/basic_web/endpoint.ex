@@ -7,12 +7,8 @@ defmodule BasicWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_basic_key",
-    signing_salt: "RonJAByc"
+    signing_salt: "DCQ1W4rF"
   ]
-
-  socket "/socket", BasicWeb.UserSocket,
-    websocket: true,
-    longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
@@ -24,7 +20,7 @@ defmodule BasicWeb.Endpoint do
     at: "/",
     from: :basic,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(assets fonts images favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -32,6 +28,7 @@ defmodule BasicWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :basic
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
